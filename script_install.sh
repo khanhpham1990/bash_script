@@ -8,7 +8,10 @@ function main {
 function skype {
   echo "--------------"
   echo "Starting install skype..."
-  sudo apt-get install skype
+  sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+  sudo dpkg --add-architecture i386
+  sudo apt-get update
+  sudo apt-get install -y skype
   echo "--------------"
 }
 
@@ -17,7 +20,7 @@ function java8 {
   echo "Starting install java8"
   sudo add-apt-repository ppa:webupd8team/java
   sudo apt-get update
-  sudo apt-get install oracle-java8-installer
+  sudo apt-get install -y oracle-java8-installer
   sudo apt-get install oracle-java8-set-default
   echo "--------------"
 }
