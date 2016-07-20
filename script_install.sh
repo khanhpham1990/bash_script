@@ -5,6 +5,14 @@ function main {
   installTools
 }
 
+function pow {
+  curl get.pow.cx | sh
+}
+
+function uninstallpow {
+  curl get.pow.cx/uninstall.sh | sh`
+}
+
 function skype {
   echo "--------------"
   echo "Starting install skype..."
